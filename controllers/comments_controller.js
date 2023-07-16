@@ -15,12 +15,14 @@ module.exports.create = async function (req, res) {
             post.comments.push(comment);
             post.save();
 
+            req.flash('success', 'Comment added Successfully');
+
             res.redirect('/')
         };
         } 
     catch(err){
-        console.log('Error', err);
-        return;
+        req.flash('error', err);
+        return res.redirect('back');
     }
 }
 
