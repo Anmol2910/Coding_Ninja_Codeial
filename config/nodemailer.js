@@ -30,3 +30,9 @@ let renderTemplate = (data, relativePath)=>{
     )
     return mailHTML;
 }
+
+module.exports = {
+    transporter: transporter,
+    renderTemplate: renderTemplate
+
+}
